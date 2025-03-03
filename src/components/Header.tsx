@@ -39,13 +39,13 @@ const Header = () => {
           <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" 
             className="flex items-center space-x-1 button-primary">
             <span>Book a Free Consult</span>
-            <ChevronRight size={16} />
+            <ChevronRight size={16} className="text-white" />
           </a>
         </nav>
         <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" className="md:hidden button-primary">
           <span className="flex items-center">
             Book Now
-            <ChevronRight size={16} className="ml-1" />
+            <ChevronRight size={16} className="ml-1 text-white" />
           </span>
         </a>
       </div>

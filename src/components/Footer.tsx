@@ -25,7 +25,7 @@ const Footer = () => {
                 href="mailto:contact@archeohub.com"
                 className="flex items-center text-archeohub-muted hover:text-archeohub-primary transition-colors"
               >
-                <Mail size={16} className="mr-2" />
+                <Mail size={16} className="mr-2 text-archeohub-primary" />
                 <span>contact@archeohub.com</span>
               </a>
               
@@ -35,7 +35,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="flex items-center text-archeohub-muted hover:text-archeohub-primary transition-colors"
               >
-                <Linkedin size={16} className="mr-2" />
+                <Linkedin size={16} className="mr-2 text-archeohub-primary" />
                 <span>LinkedIn</span>
               </a>
               
@@ -43,7 +43,7 @@ const Footer = () => {
                 href="tel:+15551234567"
                 className="flex items-center text-archeohub-muted hover:text-archeohub-primary transition-colors"
               >
-                <Phone size={16} className="mr-2" />
+                <Phone size={16} className="mr-2 text-archeohub-primary" />
                 <span>+1 (555) 123-4567</span>
               </a>
             </div>
