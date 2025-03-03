@@ -23,7 +23,7 @@ const Header = () => {
           <img 
             src="/lovable-uploads/830ca3f1-695b-4953-90b1-be9d995f341c.png" 
             alt="Archeohub Logo" 
-            className="h-10 w-auto"
+            className="h-[7.2rem] w-auto"
           />
         </div>
         <nav className="hidden md:flex items-center space-x-6">
