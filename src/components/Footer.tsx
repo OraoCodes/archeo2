@@ -13,9 +13,9 @@ const Footer = () => {
               <img 
                 src="/lovable-uploads/830ca3f1-695b-4953-90b1-be9d995f341c.png" 
                 alt="Archeohub Logo" 
-                className="h-[7.2rem] w-auto mb-2"
+                className="h-[7.2rem] w-auto -my-4 -ml-3" 
               />
-              <p className="text-archeohub-muted text-sm mt-2">
+              <p className="text-archeohub-muted text-sm mt-0">
                 Built by founders, for founders.
               </p>
             </div>
