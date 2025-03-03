@@ -19,7 +19,7 @@ const Pricing = () => {
               <div className="inline-block px-3 py-1 mb-4 rounded-full bg-archeohub-primary/10 text-archeohub-primary text-xs font-medium">
                 Trial
               </div>
-              <h3 className="text-2xl font-bold mb-4">$250–500 flat fee</h3>
+              <h3 className="text-2xl font-bold mb-4">$300 flat fee</h3>
               <p className="text-archeohub-muted mb-6">
                 Try an engineer for 4-6 weeks with minimal risk. Perfect for testing the waters.
               </p>

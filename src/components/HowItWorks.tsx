@@ -13,7 +13,7 @@ const HowItWorks = () => {
       id: 2,
       icon: <Clock className="w-12 h-12 text-archeohub-secondary" />,
       title: "Trial a Engineer",
-      description: "$250-500 for 4-6 weeks. Watch them deliver tangible results before making any hiring decisions.",
+      description: "$300 for 4-6 weeks. Watch them deliver tangible results before making any hiring decisions.",
     },
     {
       id: 3,
