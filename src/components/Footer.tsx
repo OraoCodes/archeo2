@@ -40,11 +40,11 @@ const Footer = () => {
               </a>
               
               <a 
-                href="tel:+15551234567"
+                href="tel:+254743659514"
                 className="flex items-center text-archeohub-muted hover:text-archeohub-primary transition-colors"
               >
                 <Phone size={16} className="mr-2 text-archeohub-primary" />
-                <span>+1 (555) 123-4567</span>
+                <span>+254 743 659 514</span>
               </a>
             </div>
           </div>
