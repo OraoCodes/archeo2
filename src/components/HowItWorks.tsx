@@ -1,23 +1,20 @@
 
-import { FileText, Clock, CheckCircle, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const HowItWorks = () => {
   const steps = [
     {
       id: 1,
-      icon: <FileText className="w-12 h-12 text-archeohub-primary" />,
       title: "Define Your Project",
       description: "Tell us your technical challenge and requirements. We'll match you with the perfect engineer.",
     },
     {
       id: 2,
-      icon: <Clock className="w-12 h-12 text-archeohub-secondary" />,
       title: "Trial a Engineer",
       description: "$300 for 4-6 weeks. Watch them deliver tangible results before making any hiring decisions.",
     },
     {
       id: 3,
-      icon: <CheckCircle className="w-12 h-12 text-archeohub-accent" />,
       title: "Hire or Walk Away",
       description: "Pay only if they excel. No long-term commitment if they don't meet your expectations.",
     },
@@ -40,13 +37,10 @@ const HowItWorks = () => {
           {steps.map((step, index) => (
             <div key={step.id} className="mb-16 last:mb-0 animate-fade-in" style={{ animationDelay: `${index * 150}ms` }}>
               <div className="flex flex-col md:flex-row gap-6 md:gap-10 relative">
-                {/* Step number circle and icon */}
+                {/* Step number circle */}
                 <div className="flex flex-col items-center md:items-start">
                   <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center shadow-lg border-2 border-archeohub-primary z-10">
                     <span className="text-2xl font-bold text-archeohub-primary">{step.id}</span>
-                  </div>
-                  <div className="mt-4 p-5 bg-white rounded-xl shadow-lg flex items-center justify-center z-10">
-                    {step.icon}
                   </div>
                 </div>
                 
