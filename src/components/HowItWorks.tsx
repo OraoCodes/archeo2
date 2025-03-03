@@ -1,5 +1,6 @@
 
-import { ArrowRight } from 'lucide-react';
+import React from 'react';
+import { CheckCircle } from 'lucide-react';
 
 const HowItWorks = () => {
   const steps = [
@@ -7,16 +8,22 @@ const HowItWorks = () => {
       id: 1,
       title: "Define Your Project",
       description: "Tell us your technical challenge and requirements. We'll match you with the perfect engineer.",
+      date: "Day 1",
+      status: "completed"
     },
     {
       id: 2,
-      title: "Trial a Engineer",
+      title: "Trial an Engineer",
       description: "$300 for 4-6 weeks. Watch them deliver tangible results before making any hiring decisions.",
+      date: "Week 1-6",
+      status: "completed"
     },
     {
       id: 3,
       title: "Hire or Walk Away",
       description: "Pay only if they excel. No long-term commitment if they don't meet your expectations.",
+      date: "After Trial",
+      status: "current"
     },
   ];
 
@@ -30,47 +37,77 @@ const HowItWorks = () => {
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto relative">
-          {/* Vertical connector line (desktop) */}
-          <div className="hidden md:block absolute left-[3.5rem] top-10 bottom-10 w-1 bg-gradient-to-b from-archeohub-primary via-archeohub-secondary to-archeohub-accent rounded-full z-0"></div>
-          
+        {/* Mobile Timeline (Vertical) */}
+        <div className="md:hidden">
           {steps.map((step, index) => (
-            <div key={step.id} className="mb-16 last:mb-0 animate-fade-in" style={{ animationDelay: `${index * 150}ms` }}>
-              <div className="flex flex-col md:flex-row gap-6 md:gap-10 relative">
-                {/* Step number circle */}
-                <div className="flex flex-col items-center md:items-start">
-                  <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center shadow-lg border-2 border-archeohub-primary z-10">
-                    <span className="text-2xl font-bold text-archeohub-primary">{step.id}</span>
+            <div key={step.id} className="mb-12 last:mb-0 relative animate-fade-in" style={{ animationDelay: `${index * 150}ms` }}>
+              {/* Vertical line connector */}
+              {index < steps.length - 1 && (
+                <div className="absolute left-7 top-14 bottom-0 w-1 bg-gradient-to-b from-archeohub-primary to-archeohub-secondary"></div>
+              )}
+              
+              <div className="flex gap-6">
+                {/* Circle indicator */}
+                <div className="relative">
+                  <div className={`w-14 h-14 rounded-full flex items-center justify-center z-10 ${
+                    step.status === 'completed' ? 'bg-archeohub-primary' : 'bg-white border-2 border-archeohub-primary'
+                  }`}>
+                    {step.status === 'completed' ? (
+                      <CheckCircle className="w-7 h-7 text-white" />
+                    ) : (
+                      <span className="text-xl font-bold text-archeohub-primary">{step.id}</span>
+                    )}
                   </div>
                 </div>
                 
-                {/* Step content */}
-                <div className="bg-white p-8 rounded-xl shadow-lg flex-1 hover:shadow-xl transition-all duration-300 border border-gray-100 z-10">
-                  <h3 className="text-2xl font-bold mb-4">{step.title}</h3>
-                  <p className="text-lg text-archeohub-muted">{step.description}</p>
+                {/* Content */}
+                <div className="flex-1">
+                  <div className="mb-1 text-sm font-medium text-archeohub-muted">{step.date}</div>
+                  <h3 className="text-xl font-bold mb-2">{step.title}</h3>
+                  <p className="text-archeohub-muted">{step.description}</p>
                 </div>
               </div>
-              
-              {/* Connector arrow (only between steps, not after the last one) */}
-              {index < steps.length - 1 && (
-                <>
-                  {/* Desktop arrow */}
-                  <div className="hidden md:flex items-center justify-center absolute left-[3.5rem] mt-4">
-                    <div className="w-8 h-8 rounded-full bg-white shadow-md flex items-center justify-center border border-archeohub-primary">
-                      <ArrowRight className="w-5 h-5 text-archeohub-primary" />
-                    </div>
-                  </div>
-                  
-                  {/* Mobile arrow */}
-                  <div className="flex md:hidden items-center justify-center my-6">
-                    <div className="w-8 h-8 rounded-full bg-white shadow-md flex items-center justify-center border border-archeohub-primary">
-                      <ArrowRight className="w-5 h-5 text-archeohub-primary transform rotate-90" />
-                    </div>
-                  </div>
-                </>
-              )}
             </div>
           ))}
+        </div>
+
+        {/* Desktop Timeline (Horizontal) */}
+        <div className="hidden md:block relative max-w-5xl mx-auto">
+          {/* Horizontal connector line */}
+          <div className="absolute top-7 left-0 right-0 h-1 bg-gradient-to-r from-archeohub-primary via-archeohub-secondary to-archeohub-accent"></div>
+          
+          <div className="flex justify-between">
+            {steps.map((step, index) => (
+              <div key={step.id} className="w-1/3 px-4 animate-fade-in" style={{ animationDelay: `${index * 150}ms` }}>
+                {/* Circle indicator */}
+                <div className="flex justify-center mb-8 relative">
+                  <div className={`w-14 h-14 rounded-full flex items-center justify-center z-10 ${
+                    step.status === 'completed' ? 'bg-archeohub-primary' : 
+                    step.status === 'current' ? 'bg-archeohub-secondary' : 'bg-white border-2 border-archeohub-primary'
+                  }`}>
+                    {step.status === 'completed' ? (
+                      <CheckCircle className="w-7 h-7 text-white" />
+                    ) : (
+                      <span className="text-xl font-bold text-white">{step.id}</span>
+                    )}
+                  </div>
+                </div>
+                
+                {/* Date */}
+                <div className="text-center mb-2">
+                  <div className="inline-block px-4 py-1 bg-gray-100 rounded-full text-sm font-medium text-archeohub-muted">
+                    {step.date}
+                  </div>
+                </div>
+                
+                {/* Content */}
+                <div className="text-center bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+                  <h3 className="text-xl font-bold mb-3">{step.title}</h3>
+                  <p className="text-archeohub-muted">{step.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
