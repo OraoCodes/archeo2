@@ -40,7 +40,7 @@ const Hero = () => {
             </div>
             <div className="flex items-center">
               <div className="w-1 h-8 bg-archeohub-primary/20 rounded-full mr-3" />
-              <span>85% trial-to-hire success rate</span>
+              <span>95% trial-to-hire success rate</span>
             </div>
             <div className="flex items-center">
               <div className="w-1 h-8 bg-archeohub-primary/20 rounded-full mr-3" />

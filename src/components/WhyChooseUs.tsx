@@ -10,7 +10,7 @@ const WhyChooseUs = () => {
     },
     {
       icon: <BarChart className="w-6 h-6 text-archeohub-secondary" />,
-      title: "85% trial-to-hire success rate",
+      title: "95% trial-to-hire success rate",
       description: "Our curated network of engineers have a proven track record of delivering quality work on time."
     },
     {
