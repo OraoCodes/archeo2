@@ -5,13 +5,13 @@ const HowItWorks = () => {
   const steps = [
     {
       id: 1,
-      icon: <FileText className="w-12 h-12 text-archeohub-accent" />,
+      icon: <FileText className="w-12 h-12 text-archeohub-primary" />,
       title: "Define Your Project",
       description: "Tell us your technical challenge and requirements. We'll match you with the perfect engineer.",
     },
     {
       id: 2,
-      icon: <Clock className="w-12 h-12 text-archeohub-accent" />,
+      icon: <Clock className="w-12 h-12 text-archeohub-secondary" />,
       title: "Trial a Engineer",
       description: "$250-500 for 4-6 weeks. Watch them deliver tangible results before making any hiring decisions.",
     },
@@ -39,7 +39,7 @@ const HowItWorks = () => {
               <div className="mb-6 transition-transform duration-500 ease-in-out transform group-hover:scale-110">
                 {step.icon}
               </div>
-              <div className="flex items-center justify-center w-8 h-8 rounded-full bg-archeohub-accent text-white font-bold mb-4">
+              <div className="flex items-center justify-center w-8 h-8 rounded-full bg-archeohub-primary text-white font-bold mb-4">
                 {step.id}
               </div>
               <h3 className="text-xl font-bold mb-3">{step.title}</h3>

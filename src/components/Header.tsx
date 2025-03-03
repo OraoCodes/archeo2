@@ -21,17 +21,17 @@ const Header = () => {
       <div className="container flex justify-between items-center">
         <div className="flex items-center">
           <h2 className="text-xl font-bold font-display text-archeohub-dark">
-            Archeo<span className="text-archeohub-accent">hub</span>
+            Archeo<span className="text-archeohub-primary">hub</span>
           </h2>
         </div>
         <nav className="hidden md:flex items-center space-x-6">
-          <a href="#how-it-works" className="text-sm font-medium text-archeohub-dark hover:text-archeohub-accent transition-colors">
+          <a href="#how-it-works" className="text-sm font-medium text-archeohub-dark hover:text-archeohub-primary transition-colors">
             How It Works
           </a>
-          <a href="#why-us" className="text-sm font-medium text-archeohub-dark hover:text-archeohub-accent transition-colors">
+          <a href="#why-us" className="text-sm font-medium text-archeohub-dark hover:text-archeohub-primary transition-colors">
             Why Choose Us
           </a>
-          <a href="#pricing" className="text-sm font-medium text-archeohub-dark hover:text-archeohub-accent transition-colors">
+          <a href="#pricing" className="text-sm font-medium text-archeohub-dark hover:text-archeohub-primary transition-colors">
             Pricing
           </a>
           <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" 

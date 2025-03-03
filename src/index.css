@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Display:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -16,16 +16,16 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
 
-    --primary: 196 94% 48%;
+    --primary: 222 84% 44%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96%;
+    --secondary: 162 58% 45%;
     --secondary-foreground: 222 47% 11%;
 
     --muted: 210 40% 96%;
     --muted-foreground: 215 16% 47%;
 
-    --accent: 196 94% 48%;
+    --accent: 41 83% 55%;
     --accent-foreground: 222 47% 11%;
 
     --destructive: 0 84% 60%;
@@ -62,7 +62,7 @@
   }
 
   .button-primary {
-    @apply bg-archeohub-accent text-white font-medium py-3 px-6 rounded-lg hover:bg-archeohub-accent/90 transition-all duration-300 shadow-sm hover:shadow-md active:translate-y-0.5;
+    @apply bg-archeohub-primary text-white font-medium py-3 px-6 rounded-lg hover:bg-archeohub-primary/90 transition-all duration-300 shadow-sm hover:shadow-md active:translate-y-0.5;
   }
 
   .step-card {

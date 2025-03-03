@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -20,8 +19,8 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				sans: ['Inter', 'system-ui', 'sans-serif'],
-				display: ['SF Pro Display', 'Inter', 'system-ui', 'sans-serif'],
+				sans: ['Open Sans Display', 'Inter', 'system-ui', 'sans-serif'],
+				display: ['Open Sans Display', 'Inter', 'system-ui', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -60,7 +59,9 @@ export default {
 				archeohub: {
 					dark: '#1A1F2C',
 					light: '#F6F6F7',
-					accent: '#0EA5E9',
+					primary: '#3E52A2',
+					secondary: '#30B57E',
+					accent: '#EAB62E',
 					muted: '#8E9196',
 				},
 				sidebar: {

@@ -3,12 +3,12 @@ import { Star } from 'lucide-react';
 
 const Testimonial = () => {
   return (
-    <section className="py-20 bg-gradient-to-br from-archeohub-accent/5 to-transparent">
+    <section className="py-20 bg-gradient-to-br from-archeohub-primary/5 to-transparent">
       <div className="container px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex justify-center mb-6">
             {[1, 2, 3, 4, 5].map((star) => (
-              <Star key={star} fill="#0EA5E9" color="#0EA5E9" className="w-6 h-6 mx-1" />
+              <Star key={star} fill="#EAB62E" color="#EAB62E" className="w-6 h-6 mx-1" />
             ))}
           </div>
           

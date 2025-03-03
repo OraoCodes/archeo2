@@ -16,7 +16,7 @@ const Pricing = () => {
           {/* Trial Package */}
           <div className="bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border border-border overflow-hidden">
             <div className="p-8">
-              <div className="inline-block px-3 py-1 mb-4 rounded-full bg-archeohub-accent/10 text-archeohub-accent text-xs font-medium">
+              <div className="inline-block px-3 py-1 mb-4 rounded-full bg-archeohub-primary/10 text-archeohub-primary text-xs font-medium">
                 Trial
               </div>
               <h3 className="text-2xl font-bold mb-4">$250–500 flat fee</h3>
@@ -33,7 +33,7 @@ const Pricing = () => {
                   "Walk away if not satisfied"
                 ].map((feature, i) => (
                   <li key={i} className="flex items-start">
-                    <Check size={20} className="text-archeohub-accent mr-2 mt-0.5" />
+                    <Check size={20} className="text-archeohub-secondary mr-2 mt-0.5" />
                     <span>{feature}</span>
                   </li>
                 ))}
@@ -70,7 +70,7 @@ const Pricing = () => {
                   "Replacement if needed"
                 ].map((feature, i) => (
                   <li key={i} className="flex items-start">
-                    <Check size={20} className="text-archeohub-accent mr-2 mt-0.5" />
+                    <Check size={20} className="text-archeohub-secondary mr-2 mt-0.5" />
                     <span>{feature}</span>
                   </li>
                 ))}

@@ -4,11 +4,11 @@ import { ChevronRight } from 'lucide-react';
 const Hero = () => {
   return (
     <section className="relative pt-28 pb-20 md:pt-36 md:pb-32 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-archeohub-accent/5 to-transparent -z-10" />
+      <div className="absolute inset-0 bg-gradient-to-b from-archeohub-primary/5 to-transparent -z-10" />
       
       <div className="container max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex flex-col items-center text-center">
-          <div className="inline-block px-3 py-1 mb-6 rounded-full bg-archeohub-accent/10 text-archeohub-accent text-xs font-medium animate-fade-in">
+          <div className="inline-block px-3 py-1 mb-6 rounded-full bg-archeohub-primary/10 text-archeohub-primary text-xs font-medium animate-fade-in">
             For Founders Who Value Time & Resources
           </div>
           
@@ -35,15 +35,15 @@ const Hero = () => {
           
           <div className="mt-14 md:mt-20 flex flex-col sm:flex-row justify-center items-center gap-6 text-sm text-archeohub-muted animate-fade-in">
             <div className="flex items-center">
-              <div className="w-1 h-8 bg-archeohub-accent/20 rounded-full mr-3" />
+              <div className="w-1 h-8 bg-archeohub-primary/20 rounded-full mr-3" />
               <span>No upfront agency fees</span>
             </div>
             <div className="flex items-center">
-              <div className="w-1 h-8 bg-archeohub-accent/20 rounded-full mr-3" />
+              <div className="w-1 h-8 bg-archeohub-primary/20 rounded-full mr-3" />
               <span>85% trial-to-hire success rate</span>
             </div>
             <div className="flex items-center">
-              <div className="w-1 h-8 bg-archeohub-accent/20 rounded-full mr-3" />
+              <div className="w-1 h-8 bg-archeohub-primary/20 rounded-full mr-3" />
               <span>Retain talent or get your money back</span>
             </div>
           </div>

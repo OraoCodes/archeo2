@@ -9,12 +9,12 @@ const WhyChooseUs = () => {
       description: "We don't charge massive upfront costs like traditional agencies. You only pay for proven results."
     },
     {
-      icon: <BarChart className="w-6 h-6 text-archeohub-accent" />,
+      icon: <BarChart className="w-6 h-6 text-archeohub-secondary" />,
       title: "85% trial-to-hire success rate",
       description: "Our curated network of engineers have a proven track record of delivering quality work on time."
     },
     {
-      icon: <Shield className="w-6 h-6 text-archeohub-accent" />,
+      icon: <Shield className="w-6 h-6 text-archeohub-primary" />,
       title: "10% monthly fee for 6 months = retention guarantee",
       description: "Our unique payment structure ensures engineers are committed for the long term."
     }
@@ -29,7 +29,7 @@ const WhyChooseUs = () => {
           <div className="space-y-10">
             {benefits.map((benefit, index) => (
               <div key={index} className="benefit-item">
-                <div className="mt-1 p-2 bg-archeohub-accent/20 rounded-lg">
+                <div className="mt-1 p-2 bg-white/10 rounded-lg">
                   {benefit.icon}
                 </div>
                 <div>

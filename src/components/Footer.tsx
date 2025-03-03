@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center mb-8">
             <div className="mb-6 md:mb-0">
               <h2 className="text-xl font-bold font-display text-archeohub-dark">
-                Archeo<span className="text-archeohub-accent">hub</span>
+                Archeo<span className="text-archeohub-primary">hub</span>
               </h2>
               <p className="text-archeohub-muted text-sm mt-2">
                 Built by founders, for founders.
@@ -21,7 +21,7 @@ const Footer = () => {
             <div className="flex flex-col md:flex-row gap-4 md:gap-8">
               <a 
                 href="mailto:contact@archeohub.com"
-                className="flex items-center text-archeohub-muted hover:text-archeohub-accent transition-colors"
+                className="flex items-center text-archeohub-muted hover:text-archeohub-primary transition-colors"
               >
                 <Mail size={16} className="mr-2" />
                 <span>contact@archeohub.com</span>
@@ -31,7 +31,7 @@ const Footer = () => {
                 href="https://linkedin.com/company/archeohub"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center text-archeohub-muted hover:text-archeohub-accent transition-colors"
+                className="flex items-center text-archeohub-muted hover:text-archeohub-primary transition-colors"
               >
                 <Linkedin size={16} className="mr-2" />
                 <span>LinkedIn</span>
@@ -39,7 +39,7 @@ const Footer = () => {
               
               <a 
                 href="tel:+15551234567"
-                className="flex items-center text-archeohub-muted hover:text-archeohub-accent transition-colors"
+                className="flex items-center text-archeohub-muted hover:text-archeohub-primary transition-colors"
               >
                 <Phone size={16} className="mr-2" />
                 <span>+1 (555) 123-4567</span>
