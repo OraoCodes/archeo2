@@ -19,8 +19,8 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				sans: ['Open Sans Display', 'Inter', 'system-ui', 'sans-serif'],
-				display: ['Open Sans Display', 'Inter', 'system-ui', 'sans-serif'],
+				sans: ['Google Sans Display', 'Open Sans Display', 'system-ui', 'sans-serif'],
+				display: ['Google Sans Display', 'Open Sans Display', 'system-ui', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
