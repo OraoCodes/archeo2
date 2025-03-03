@@ -10,9 +10,11 @@ const Footer = () => {
         <div className="max-w-4xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center mb-8">
             <div className="mb-6 md:mb-0">
-              <h2 className="text-xl font-bold font-display text-archeohub-dark">
-                Archeo<span className="text-archeohub-primary">hub</span>
-              </h2>
+              <img 
+                src="/lovable-uploads/830ca3f1-695b-4953-90b1-be9d995f341c.png" 
+                alt="Archeohub Logo" 
+                className="h-[2.4rem] w-auto mb-2"
+              />
               <p className="text-archeohub-muted text-sm mt-2">
                 Built by founders, for founders.
               </p>

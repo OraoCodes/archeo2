@@ -20,9 +20,11 @@ const Header = () => {
     }`}>
       <div className="container flex justify-between items-center">
         <div className="flex items-center">
-          <h2 className="text-xl font-bold font-display text-archeohub-dark">
-            Archeo<span className="text-archeohub-primary">hub</span>
-          </h2>
+          <img 
+            src="/lovable-uploads/830ca3f1-695b-4953-90b1-be9d995f341c.png" 
+            alt="Archeohub Logo" 
+            className="h-[2.4rem] w-auto"
+          />
         </div>
         <nav className="hidden md:flex items-center space-x-6">
           <a href="#how-it-works" className="text-sm font-medium text-archeohub-dark hover:text-archeohub-primary transition-colors">
