@@ -1,5 +1,5 @@
 
-import { FileText, Clock, CheckCircle } from 'lucide-react';
+import { FileText, Clock, CheckCircle, ArrowRight } from 'lucide-react';
 
 const HowItWorks = () => {
   const steps = [
@@ -24,7 +24,7 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section id="how-it-works" className="py-20 md:py-28">
+    <section id="how-it-works" className="py-20 md:py-28 bg-gray-50">
       <div className="container px-4 sm:px-6">
         <div className="text-center mb-16">
           <h2 className="section-title mb-4">How It Works</h2>
@@ -33,17 +33,44 @@ const HowItWorks = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {steps.map((step) => (
-            <div key={step.id} className="step-card flex flex-col items-center text-center group">
-              <div className="mb-6 transition-transform duration-500 ease-in-out transform group-hover:scale-110">
-                {step.icon}
+        <div className="max-w-4xl mx-auto">
+          {steps.map((step, index) => (
+            <div key={step.id} className="relative">
+              {/* Step Container */}
+              <div className="flex flex-col md:flex-row items-center md:items-start gap-6 mb-12 relative z-10">
+                {/* Step Number & Icon */}
+                <div className="flex flex-col items-center">
+                  <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-md mb-3 border-2 border-archeohub-primary">
+                    <span className="text-xl font-bold text-archeohub-primary">{step.id}</span>
+                  </div>
+                  <div className="p-4 bg-white rounded-2xl shadow-md flex items-center justify-center">
+                    {step.icon}
+                  </div>
+                </div>
+                
+                {/* Step Content */}
+                <div className="bg-white p-6 md:p-8 rounded-2xl shadow-md md:ml-4 flex-1 hover:shadow-lg transition-all duration-300 border border-gray-100">
+                  <h3 className="text-xl font-bold mb-3">{step.title}</h3>
+                  <p className="text-archeohub-muted">{step.description}</p>
+                </div>
               </div>
-              <div className="flex items-center justify-center w-8 h-8 rounded-full bg-archeohub-primary text-white font-bold mb-4">
-                {step.id}
-              </div>
-              <h3 className="text-xl font-bold mb-3">{step.title}</h3>
-              <p className="text-archeohub-muted">{step.description}</p>
+              
+              {/* Connector Line - Don't show after the last step */}
+              {index < steps.length - 1 && (
+                <div className="hidden md:flex items-center justify-center absolute left-8 ml-[0.5px] top-[7.5rem] h-[4.5rem] z-0">
+                  <div className="h-full w-0.5 bg-archeohub-primary"></div>
+                  <div className="absolute bottom-0 transform translate-x-[-40%]">
+                    <ArrowRight className="w-5 h-5 text-archeohub-primary" />
+                  </div>
+                </div>
+              )}
+              
+              {/* Mobile Connector - Arrow Down */}
+              {index < steps.length - 1 && (
+                <div className="flex md:hidden items-center justify-center mb-8">
+                  <ArrowRight className="w-6 h-6 text-archeohub-primary transform rotate-90" />
+                </div>
+              )}
             </div>
           ))}
         </div>
