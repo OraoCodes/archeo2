@@ -17,8 +17,8 @@ const Testimonial = () => {
           </p>
           
           <div>
-            <p className="font-bold text-lg">Sarah Johnson</p>
-            <p className="text-archeohub-muted">Founder, TechLaunch</p>
+            <p className="font-bold text-lg">Brian Kiptum</p>
+            <p className="text-archeohub-muted">CTO, Sqdgo Riders</p>
           </div>
         </div>
       </div>
