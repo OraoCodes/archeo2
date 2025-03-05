@@ -20,16 +20,16 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  // Add base path for production builds
+  // Add base path for production builds - using relative path for Squarespace compatibility
   base: "./",
   build: {
     // Output directory for production build
     outDir: "dist",
     // Generate source maps for better debugging
     sourcemap: true,
-    // Ensure assets are correctly referenced
+    // Ensure assets are correctly referenced with relative paths
     assetsDir: "assets",
-    // Rollup options for better compatibility
+    // Rollup options for better compatibility with static hosting
     rollupOptions: {
       output: {
         manualChunks: {
