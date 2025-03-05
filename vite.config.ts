@@ -9,7 +9,6 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
-    // Proper MIME type handling
     fs: {
       allow: ['..']
     },
@@ -30,7 +29,7 @@ export default defineConfig(({ mode }) => ({
   build: {
     // Output directory
     outDir: "dist",
-    sourcemap: true,
+    sourcemap: false, // Disable sourcemaps for production
     // Use relative paths for assets
     assetsDir: "assets",
     // Ensure JS files are properly built and named
@@ -53,7 +52,9 @@ export default defineConfig(({ mode }) => ({
         '.ts': 'tsx',
       },
       define: {
-        'process.env.NODE_ENV': JSON.stringify(mode)
+        'process.env.NODE_ENV': JSON.stringify(mode),
+        // Disable HMR-related features for production builds
+        'import.meta.hot': 'undefined'
       }
     },
   },
