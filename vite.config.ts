@@ -9,6 +9,11 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+    // Add proper MIME type handling for TypeScript files
+    fs: {
+      // Allow serving files from one level up to the project root
+      allow: ['..']
+    },
   },
   plugins: [
     react(),
@@ -40,6 +45,15 @@ export default defineConfig(({ mode }) => ({
         entryFileNames: 'assets/[name].js',
         chunkFileNames: 'assets/[name].js',
         assetFileNames: 'assets/[name].[ext]'
+      },
+    },
+  },
+  optimizeDeps: {
+    esbuildOptions: {
+      // Properly handle JSX/TSX files during development
+      loader: {
+        '.js': 'jsx',
+        '.ts': 'tsx',
       },
     },
   },
