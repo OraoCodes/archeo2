@@ -19,6 +19,7 @@ export default defineConfig(({ mode }) => ({
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
+    extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json']
   },
   // Add base path for production builds - using relative path for Squarespace compatibility
   base: "./",
