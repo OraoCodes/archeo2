@@ -4,22 +4,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>hire-hub-trial</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+    <title>Archeohub - Hire Senior Engineers Risk-Free</title>
+    <meta name="description" content="Archeohub - Hire senior engineers with a risk-free trial period" />
+    <meta name="author" content="Archeohub" />
     <meta property="og:image" content="./og-image.png" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans+Display:wght@300;400;500;600;700&display=swap">
-    <!-- Ensuring relative paths with base href -->
+    <!-- Base href for relative paths -->
     <base href="./">
-    <!-- Force correct mime types for TypeScript files when loaded as modules -->
+    <!-- Import map for module resolution -->
     <script type="importmap">
     {
       "imports": {
         "react": "https://esm.sh/react@18.3.1",
-        "react-dom": "https://esm.sh/react-dom@18.3.1"
+        "react-dom": "https://esm.sh/react-dom@18.3.1",
+        "react-dom/client": "https://esm.sh/react-dom@18.3.1/client",
+        "react-router-dom": "https://esm.sh/react-router-dom@6.26.2"
       }
     }
     </script>
+    <link rel="stylesheet" href="./src/index.css">
   </head>
 
   <body>

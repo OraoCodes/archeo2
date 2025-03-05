@@ -9,9 +9,8 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
-    // Add proper MIME type handling for TypeScript files
+    // Proper MIME type handling
     fs: {
-      // Allow serving files from one level up to the project root
       allow: ['..']
     },
   },
@@ -26,35 +25,36 @@ export default defineConfig(({ mode }) => ({
     },
     extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json']
   },
-  // Add base path for production builds - using relative path for Squarespace compatibility
+  // Use relative paths for Squarespace compatibility
   base: "./",
   build: {
-    // Output directory for production build
+    // Output directory
     outDir: "dist",
-    // Generate source maps for better debugging
     sourcemap: true,
-    // Ensure assets are correctly referenced with relative paths
+    // Use relative paths for assets
     assetsDir: "assets",
-    // Rollup options for better compatibility with static hosting
+    // Ensure JS files are properly built and named
     rollupOptions: {
       output: {
+        entryFileNames: 'assets/[name].js',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]',
         manualChunks: {
           vendor: ['react', 'react-dom', 'react-router-dom'],
         },
-        // Ensure proper MIME types by adjusting file extensions
-        entryFileNames: 'assets/[name].js',
-        chunkFileNames: 'assets/[name].js',
-        assetFileNames: 'assets/[name].[ext]'
       },
     },
   },
+  // Configure proper handling of TypeScript files
   optimizeDeps: {
     esbuildOptions: {
-      // Properly handle JSX/TSX files during development
       loader: {
         '.js': 'jsx',
         '.ts': 'tsx',
       },
+      define: {
+        'process.env.NODE_ENV': JSON.stringify(mode)
+      }
     },
   },
 }));
