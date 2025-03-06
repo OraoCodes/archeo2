@@ -1,4 +1,3 @@
-
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
@@ -23,6 +22,11 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
     extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json']
+  },
+  base: '/archeo2/', // This should match your repository name
+  build: {
+    outDir: 'dist',
+    sourcemap: true
   },
   // Use relative paths for Squarespace compatibility
   base: "./",
