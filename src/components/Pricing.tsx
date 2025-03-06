@@ -1,4 +1,3 @@
-
 import { Check } from 'lucide-react';
 
 const Pricing = () => {
@@ -56,7 +55,7 @@ const Pricing = () => {
               <div className="inline-block px-3 py-1 mb-4 rounded-full bg-archeohub-accent/10 text-archeohub-accent text-xs font-medium">
                 Hire
               </div>
-              <h3 className="text-2xl font-bold mb-4">15% of salary or 10% monthly for 6 months</h3>
+              <h3 className="text-2xl font-bold mb-4">15% once or 10% monthly — your call!</h3>
               <p className="text-archeohub-muted mb-6">
                 Only pay when you're ready to bring the engineer on full-time. Two flexible options.
               </p>
