@@ -23,20 +23,11 @@ export default defineConfig(({ mode }) => ({
     },
     extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json']
   },
-  base: '/archeo2/', // This should match your repository name
+  base: '/', // Changed to root for custom domain
   build: {
     outDir: 'dist',
-    sourcemap: true
-  },
-  // Use relative paths for Squarespace compatibility
-  base: "./",
-  build: {
-    // Output directory
-    outDir: "dist",
-    sourcemap: false, // Disable sourcemaps for production
-    // Use relative paths for assets
+    sourcemap: true,
     assetsDir: "assets",
-    // Ensure JS files are properly built and named
     rollupOptions: {
       output: {
         entryFileNames: 'assets/[name].js',
@@ -48,7 +39,6 @@ export default defineConfig(({ mode }) => ({
       },
     },
   },
-  // Configure proper handling of TypeScript files
   optimizeDeps: {
     esbuildOptions: {
       loader: {
@@ -57,7 +47,6 @@ export default defineConfig(({ mode }) => ({
       },
       define: {
         'process.env.NODE_ENV': JSON.stringify(mode),
-        // Disable HMR-related features for production builds
         'import.meta.hot': 'undefined'
       }
     },
