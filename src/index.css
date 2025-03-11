@@ -48,6 +48,7 @@
 
   html {
     @apply scroll-smooth;
+    scroll-padding-top: 80px; /* Add padding for fixed header */
   }
 }
 
