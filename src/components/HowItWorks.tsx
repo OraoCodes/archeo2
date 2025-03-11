@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { CheckCircle } from 'lucide-react';
 
@@ -13,7 +12,7 @@ const HowItWorks = () => {
     },
     {
       id: 2,
-      title: "Trial an Engineer",
+      title: "Engineer Trial",
       description: "$300 for 4-6 weeks. Watch them deliver tangible results before making any hiring decisions.",
       date: "Week 1-6",
       status: "completed"
