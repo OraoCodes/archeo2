@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import { useBanner } from '../contexts/BannerContext';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { isBannerVisible } = useBanner();
   
   useEffect(() => {
     const handleScroll = () => {
@@ -23,7 +25,9 @@ const Header = () => {
 
   return (
     <>
-      <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      <header className={`fixed w-full z-50 transition-all duration-300 ${
+        isBannerVisible ? 'top-[60px]' : 'top-0'
+      } ${
         isScrolled ? 'py-3 bg-white/90 backdrop-blur shadow-sm' : 'py-5 bg-transparent'
       }`}>
         <div className="container flex justify-between items-center">

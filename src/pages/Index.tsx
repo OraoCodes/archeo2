@@ -1,6 +1,7 @@
 
 import { useEffect } from 'react';
 import Header from '../components/Header';
+import WebinarBanner from '../components/WebinarBanner';
 import Hero from '../components/Hero';
 import WhatWeDo from '../components/WhatWeDo';
 import WhyChooseUs from '../components/WhyChooseUs';
@@ -14,6 +15,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <WebinarBanner />
       <Header />
       <main>
         <Hero />
