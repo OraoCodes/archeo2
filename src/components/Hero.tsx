@@ -20,7 +20,7 @@ const Hero = () => {
       <div className="container max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
         <div className="flex flex-col items-center text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display tracking-tight mb-6 text-white max-w-4xl mx-auto text-balance animate-fade-in-up drop-shadow-lg">
-            Build Better Teams. Become a Better Candidate. Scale Without Limits.
+            Hire Fast. Hire Right.
           </h1>
           
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto text-balance animate-fade-in drop-shadow-md">
