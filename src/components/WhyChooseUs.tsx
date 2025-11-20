@@ -1,44 +1,49 @@
-
-import { DollarSign, BarChart, Shield } from 'lucide-react';
+import { CheckCircle, Globe, Users, Shield } from 'lucide-react';
 
 const WhyChooseUs = () => {
   const benefits = [
     {
-      icon: <DollarSign className="w-6 h-6 text-archeohub-accent" />,
-      title: "No upfront agency fees",
-      description: "We don't charge massive upfront costs like traditional agencies. You only pay for proven results."
+      icon: <CheckCircle className="w-8 h-8" />,
+      title: "Quality-First Screening",
+      description: "Only top candidates make it through our multi-stage evaluations."
     },
     {
-      icon: <BarChart className="w-6 h-6 text-archeohub-secondary" />,
-      title: "95% trial-to-hire success rate",
-      description: "Our curated network of engineers have a proven track record of delivering quality work on time."
+      icon: <Globe className="w-8 h-8" />,
+      title: "Global Work Culture Training",
+      description: "Talent is prepared for remote collaboration from day one."
     },
     {
-      icon: <Shield className="w-6 h-6 text-archeohub-primary" />,
-      title: "10% monthly fee for 6 months = retention guarantee",
-      description: "Our unique payment structure ensures engineers are committed for the long term."
+      icon: <Users className="w-8 h-8" />,
+      title: "Seamless Hiring Experience",
+      description: "We handle sourcing, screening, contracts, and onboarding."
+    },
+    {
+      icon: <Shield className="w-8 h-8" />,
+      title: "Africa's Best Talent Pool",
+      description: "Skilled, English-fluent, tech-oriented professionals."
     }
   ];
 
   return (
-    <section id="why-us" className="py-20 bg-archeohub-dark text-white">
+    <section id="why-us" className="py-20 md:py-28 bg-archeohub-dark text-white">
       <div className="container px-4 sm:px-6">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="section-title text-center mb-12">Why Choose Us</h2>
-          
-          <div className="space-y-10">
-            {benefits.map((benefit, index) => (
-              <div key={index} className="benefit-item">
-                <div className="mt-1 p-2 bg-white/10 rounded-lg">
-                  {benefit.icon}
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold mb-2">{benefit.title}</h3>
-                  <p className="text-archeohub-light/80">{benefit.description}</p>
-                </div>
+        <div className="text-center mb-16">
+          <h2 className="section-title text-white mb-4">Why Choose Us</h2>
+          <p className="text-lg text-white/80 max-w-2xl mx-auto">
+            Quality-first recruitment that delivers results.
+          </p>
+        </div>
+        
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          {benefits.map((benefit, index) => (
+            <div key={index} className="text-center p-6">
+              <div className="inline-flex p-4 bg-white/10 rounded-lg mb-4 text-white">
+                {benefit.icon}
               </div>
-            ))}
-          </div>
+              <h3 className="text-xl font-bold mb-3">{benefit.title}</h3>
+              <p className="text-white/80">{benefit.description}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

@@ -2,17 +2,15 @@
 import { useEffect } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
-import HowItWorks from '../components/HowItWorks';
+import WhatWeDo from '../components/WhatWeDo';
 import WhyChooseUs from '../components/WhyChooseUs';
-import Pricing from '../components/Pricing';
 import Testimonial from '../components/Testimonial';
-import FinalCTA from '../components/FinalCTA';
+import HomeCTA from '../components/HomeCTA';
 import Footer from '../components/Footer';
 
 const Index = () => {
   useEffect(() => {
-    // Set the document title
-    document.title = "Archeohub - Hire Senior Engineers Risk-Free";
+    document.title = "Archeohub - Build Better Teams. Become a Better Candidate.";
   }, []);
 
   return (
@@ -20,11 +18,10 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
-        <HowItWorks />
+        <WhatWeDo />
         <WhyChooseUs />
-        <Pricing />
         <Testimonial />
-        <FinalCTA />
+        <HomeCTA />
       </main>
       <Footer />
     </div>

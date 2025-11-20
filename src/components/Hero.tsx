@@ -1,63 +1,64 @@
-import { ChevronRight } from 'lucide-react';
-import { useState } from 'react';
-import BookingPopup from './BookingPopup';
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
-  const [isBookingOpen, setIsBookingOpen] = useState(false);
-
   return (
-    <>
-      <section className="relative pt-28 pb-20 md:pt-36 md:pb-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-archeohub-primary/5 to-transparent -z-10" />
-        
-        <div className="container max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="flex flex-col items-center text-center">
-            <div className="inline-block px-3 py-1 mb-6 rounded-full bg-archeohub-primary/10 text-archeohub-primary text-xs font-medium animate-fade-in">
-              For Founders Who Value Time & Resources
-            </div>
-            
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display tracking-tight mb-6 hero-text-shadow max-w-4xl mx-auto text-balance animate-fade-in-up">
-              Hire Senior Engineers Risk-Free.
-              <span className="block mt-2">Only Pay If They Deliver.</span>
-            </h1>
-            
-            <p className="text-lg md:text-xl text-archeohub-muted mb-8 max-w-2xl mx-auto text-balance animate-fade-in">
-              Skip costly agency fees. Get pre-vetted engineers to prove their skills in a 4–6 week trial.
-            </p>
-            
-            <button 
-              onClick={() => setIsBookingOpen(true)}
-              className="group button-primary text-base md:text-lg px-8 py-4 animate-fade-in"
+    <section className="relative pt-28 pb-20 md:pt-36 md:pb-32 overflow-hidden min-h-[600px] md:min-h-[700px] flex items-center">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+          alt="Professional team collaboration" 
+          className="w-full h-full object-cover"
+        />
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-archeohub-dark/80 via-archeohub-dark/70 to-archeohub-dark/60" />
+        {/* Subtle gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-archeohub-primary/10 to-transparent" />
+      </div>
+      
+      <div className="container max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+        <div className="flex flex-col items-center text-center">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display tracking-tight mb-6 text-white max-w-4xl mx-auto text-balance animate-fade-in-up drop-shadow-lg">
+            Build Better Teams. Become a Better Candidate. Scale Without Limits.
+          </h1>
+          
+          <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto text-balance animate-fade-in drop-shadow-md">
+            We connect ambitious talent with fast-growing startups and global companies — through recruitment, career development, and outsourced teams.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in">
+            <Link 
+              to="/outsourcing"
+              className="group button-primary text-base md:text-lg px-8 py-4 bg-white text-archeohub-primary hover:bg-archeohub-accent hover:text-white shadow-lg"
             >
               <span className="flex items-center">
-                Book a Free Consult
-                <ChevronRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                For Companies
+                <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
               </span>
-            </button>
-            
-            <div className="mt-14 md:mt-20 flex flex-col sm:flex-row justify-center items-center gap-6 text-sm text-archeohub-muted animate-fade-in">
-              <div className="flex items-center">
-                <div className="w-1 h-8 bg-archeohub-primary/20 rounded-full mr-3" />
-                <span>No upfront agency fees</span>
-              </div>
-              <div className="flex items-center">
-                <div className="w-1 h-8 bg-archeohub-primary/20 rounded-full mr-3" />
-                <span>95% trial-to-hire success rate</span>
-              </div>
-              <div className="flex items-center">
-                <div className="w-1 h-8 bg-archeohub-primary/20 rounded-full mr-3" />
-                <span>Retain talent or get your money back</span>
-              </div>
-            </div>
+            </Link>
+            <Link 
+              to="/for-startups"
+              className="group button-primary text-base md:text-lg px-8 py-4 bg-white text-archeohub-primary hover:bg-archeohub-accent hover:text-white shadow-lg"
+            >
+              <span className="flex items-center">
+                For Startups
+                <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
+              </span>
+            </Link>
+            <Link 
+              to="/for-talent"
+              className="group inline-flex items-center border-2 border-white text-white font-medium text-base md:text-lg px-8 py-4 rounded-lg hover:bg-white hover:text-archeohub-primary transition-all duration-300 shadow-lg"
+            >
+              <span className="flex items-center">
+                For Talent
+                <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
+              </span>
+            </Link>
           </div>
         </div>
-      </section>
-
-      <BookingPopup 
-        isOpen={isBookingOpen} 
-        onClose={() => setIsBookingOpen(false)} 
-      />
-    </>
+      </div>
+    </section>
   );
 };
 

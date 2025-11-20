@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
-import { ChevronRight } from 'lucide-react';
-import BookingPopup from './BookingPopup';
+import { Link, useLocation } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isBookingOpen, setIsBookingOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
   
   useEffect(() => {
     const handleScroll = () => {
@@ -15,19 +16,10 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      const headerOffset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
-  };
+  useEffect(() => {
+    // Close mobile menu when route changes
+    setIsMobileMenuOpen(false);
+  }, [location.pathname]);
 
   return (
     <>
@@ -35,56 +27,119 @@ const Header = () => {
         isScrolled ? 'py-3 bg-white/90 backdrop-blur shadow-sm' : 'py-5 bg-transparent'
       }`}>
         <div className="container flex justify-between items-center">
-          <div className="flex items-center">
+          <Link to="/" className="flex items-center">
             <img 
               src="/lovable-uploads/830ca3f1-695b-4953-90b1-be9d995f341c.png" 
               alt="Archeohub Logo" 
               className="h-[7.2rem] w-auto -my-6"
             />
-          </div>
+          </Link>
           <nav className="hidden md:flex items-center space-x-6">
-            <button 
-              onClick={() => scrollToSection('how-it-works')} 
-              className="text-sm font-medium text-archeohub-dark hover:text-archeohub-primary transition-colors"
+            <Link 
+              to="/for-talent"
+              className={`text-sm font-medium transition-colors ${
+                isScrolled 
+                  ? 'text-archeohub-dark hover:text-archeohub-primary' 
+                  : 'text-white hover:text-archeohub-accent drop-shadow-md'
+              }`}
             >
-              How It Works
-            </button>
-            <button 
-              onClick={() => scrollToSection('why-us')} 
-              className="text-sm font-medium text-archeohub-dark hover:text-archeohub-primary transition-colors"
+              For Talent
+            </Link>
+            <Link 
+              to="/for-startups"
+              className={`text-sm font-medium transition-colors ${
+                isScrolled 
+                  ? 'text-archeohub-dark hover:text-archeohub-primary' 
+                  : 'text-white hover:text-archeohub-accent drop-shadow-md'
+              }`}
             >
-              Why Choose Us
-            </button>
-            <button 
-              onClick={() => scrollToSection('pricing')} 
-              className="text-sm font-medium text-archeohub-dark hover:text-archeohub-primary transition-colors"
+              For Startups
+            </Link>
+            <Link 
+              to="/outsourcing"
+              className={`text-sm font-medium transition-colors ${
+                isScrolled 
+                  ? 'text-archeohub-dark hover:text-archeohub-primary' 
+                  : 'text-white hover:text-archeohub-accent drop-shadow-md'
+              }`}
             >
-              Pricing
-            </button>
-            <button 
-              onClick={() => setIsBookingOpen(true)}
-              className="flex items-center space-x-1 button-primary"
+              Outsourcing
+            </Link>
+            <Link 
+              to="/about"
+              className={`text-sm font-medium transition-colors ${
+                isScrolled 
+                  ? 'text-archeohub-dark hover:text-archeohub-primary' 
+                  : 'text-white hover:text-archeohub-accent drop-shadow-md'
+              }`}
             >
-              <span>Book a Free Consult</span>
-              <ChevronRight size={16} className="text-white" />
-            </button>
+              About
+            </Link>
+            <Link 
+              to="/contact"
+              className={`transition-all ${
+                isScrolled 
+                  ? 'button-primary' 
+                  : 'bg-white text-archeohub-primary hover:bg-archeohub-accent hover:text-white font-medium py-2 px-6 rounded-lg shadow-lg'
+              }`}
+            >
+              Contact
+            </Link>
           </nav>
           <button 
-            onClick={() => setIsBookingOpen(true)}
-            className="md:hidden button-primary"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className={`md:hidden p-2 transition-colors ${
+              isScrolled ? 'text-archeohub-dark' : 'text-white drop-shadow-md'
+            }`}
+            aria-label="Toggle menu"
           >
-            <span className="flex items-center">
-              Book Now
-              <ChevronRight size={16} className="ml-1 text-white" />
-            </span>
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
-      </header>
 
-      <BookingPopup 
-        isOpen={isBookingOpen} 
-        onClose={() => setIsBookingOpen(false)} 
-      />
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden absolute top-full left-0 right-0 bg-white border-t border-border shadow-lg">
+            <nav className="container py-4 space-y-3">
+              <Link 
+                to="/for-talent"
+                className="block py-2 text-sm font-medium text-archeohub-dark hover:text-archeohub-primary transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                For Talent
+              </Link>
+              <Link 
+                to="/for-startups"
+                className="block py-2 text-sm font-medium text-archeohub-dark hover:text-archeohub-primary transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                For Startups
+              </Link>
+              <Link 
+                to="/outsourcing"
+                className="block py-2 text-sm font-medium text-archeohub-dark hover:text-archeohub-primary transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Outsourcing
+              </Link>
+              <Link 
+                to="/about"
+                className="block py-2 text-sm font-medium text-archeohub-dark hover:text-archeohub-primary transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                About
+              </Link>
+              <Link 
+                to="/contact"
+                className="block py-2 button-primary text-center"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Contact
+              </Link>
+            </nav>
+          </div>
+        )}
+      </header>
     </>
   );
 };
