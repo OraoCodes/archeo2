@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { X, Calendar, Video, ArrowRight } from 'lucide-react';
 import { useBanner } from '../contexts/BannerContext';
 
@@ -23,23 +22,25 @@ const WebinarBanner = () => {
                   🎯 Upcoming Webinar:
                 </span>
                 <span className="text-sm sm:text-base">
-                  Talent Readiness
+                  How to land your dream Role in 2026
                 </span>
                 <div className="flex items-center gap-1 text-sm">
                   <Calendar className="w-4 h-4" />
-                  <span>December 15, 2025 at 7:00 PM EAT</span>
+                  <span>December 18, 2025 at 7:30 PM EAT</span>
                 </div>
               </div>
             </div>
           </div>
           <div className="flex items-center gap-3">
-            <Link
-              to="/contact"
+            <a
+              href="https://forms.gle/xJUfP6QjocFeT6vJA"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hidden sm:inline-flex items-center gap-2 bg-white text-archeohub-primary font-medium px-4 py-2 rounded-lg hover:bg-archeohub-accent hover:text-white transition-all duration-300 text-sm whitespace-nowrap"
             >
               <span>Register Now</span>
               <ArrowRight size={16} />
-            </Link>
+            </a>
             <button
               onClick={() => setIsBannerVisible(false)}
               className="p-1 hover:bg-white/20 rounded transition-colors"
