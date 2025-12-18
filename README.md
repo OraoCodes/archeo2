@@ -59,6 +59,38 @@ This project is built with .
 - React
 - shadcn-ui
 - Tailwind CSS
+- Supabase
+
+## Supabase Setup
+
+This project is connected to Supabase. To complete the setup:
+
+1. Create a `.env` file in the root directory
+2. Add your Supabase credentials:
+
+```env
+VITE_SUPABASE_URL=https://dhqddlezcqujkghcuckc.supabase.co
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key_here
+```
+
+3. Get your anon key from your [Supabase Dashboard](https://supabase.com/dashboard) → Project Settings → API
+
+The Supabase client is available throughout the app via the `useSupabase()` hook:
+
+```tsx
+import { useSupabase } from '@/contexts/SupabaseContext'
+
+function MyComponent() {
+  const { supabase } = useSupabase()
+  // Use supabase client here
+}
+```
+
+Or import directly:
+
+```tsx
+import { supabase } from '@/lib/supabase'
+```
 
 ## How can I deploy this project?
 

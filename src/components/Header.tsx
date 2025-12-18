@@ -50,6 +50,16 @@ const Header = () => {
               For Talent
             </Link>
             <Link 
+              to="/resume-review"
+              className={`text-sm font-medium transition-colors ${
+                isScrolled 
+                  ? 'text-archeohub-dark hover:text-archeohub-primary' 
+                  : 'text-white hover:text-archeohub-accent drop-shadow-md'
+              }`}
+            >
+              Resume Review
+            </Link>
+            <Link 
               to="/for-startups"
               className={`text-sm font-medium transition-colors ${
                 isScrolled 
@@ -111,6 +121,13 @@ const Header = () => {
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 For Talent
+              </Link>
+              <Link 
+                to="/resume-review"
+                className="block py-2 text-sm font-medium text-archeohub-dark hover:text-archeohub-primary transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Resume Review
               </Link>
               <Link 
                 to="/for-startups"
