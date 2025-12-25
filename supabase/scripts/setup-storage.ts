@@ -136,3 +136,4 @@ async function setupStoragePolicies() {
 // Run the setup
 setupStorage().catch(console.error);
 
+
