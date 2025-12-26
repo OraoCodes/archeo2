@@ -4,12 +4,12 @@ This directory contains SQL migrations and scripts to set up your Supabase datab
 
 ## Prerequisites
 
-1. Supabase project created at: https://dhqddlezcqujkghcuckc.supabase.co
+1. A Supabase project (create one at [supabase.com](https://supabase.com))
 2. Service Role Key from Supabase Dashboard (Settings → API → service_role key)
-3. Add the service role key to your `.env` file:
+3. Add the following to your `.env` file:
 
 ```env
-VITE_SUPABASE_URL=https://dhqddlezcqujkghcuckc.supabase.co
+VITE_SUPABASE_URL=your_supabase_project_url
 VITE_SUPABASE_ANON_KEY=your_anon_key_here
 SUPABASE_SERVICE_ROLE_KEY=your_service_role_key_here
 ```

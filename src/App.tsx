@@ -21,25 +21,25 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <SupabaseProvider>
-      <BannerProvider>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <HashRouter>
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/for-talent" element={<ForTalent />} />
-              <Route path="/for-startups" element={<ForStartups />} />
-              <Route path="/outsourcing" element={<Outsourcing />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/resume-review" element={<ResumeReview />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </HashRouter>
-        </TooltipProvider>
-      </BannerProvider>
+    <BannerProvider>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <HashRouter>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/for-talent" element={<ForTalent />} />
+            <Route path="/for-startups" element={<ForStartups />} />
+            <Route path="/outsourcing" element={<Outsourcing />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/resume-review" element={<ResumeReview />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </HashRouter>
+      </TooltipProvider>
+    </BannerProvider>
     </SupabaseProvider>
   </QueryClientProvider>
 );
