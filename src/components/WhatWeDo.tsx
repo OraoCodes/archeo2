@@ -30,7 +30,7 @@ const WhatWeDo = () => {
   ];
 
   return (
-    <section className="py-20 md:py-28 bg-white">
+    <section className="py-20 md:py-28 bg-white scroll-mt-32">
       <div className="container px-4 sm:px-6">
         <div className="text-center mb-16">
           <h2 className="section-title">What We Do</h2>

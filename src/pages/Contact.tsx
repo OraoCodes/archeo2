@@ -72,7 +72,7 @@ const Contact = () => {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="relative pt-28 pb-12 md:pt-36 md:pb-16 overflow-hidden">
+        <section className="relative pt-32 pb-12 md:pt-40 md:pb-16 overflow-hidden scroll-mt-32">
           <div className="absolute inset-0 bg-gradient-to-b from-archeohub-primary/5 to-transparent -z-10" />
           <div className="container max-w-6xl mx-auto px-4 sm:px-6">
             <div className="text-center max-w-3xl mx-auto">

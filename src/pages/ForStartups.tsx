@@ -60,7 +60,7 @@ const ForStartups = () => {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="relative pt-28 pb-20 md:pt-36 md:pb-32 overflow-hidden min-h-[500px] flex items-center">
+        <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden min-h-[500px] flex items-center scroll-mt-32">
           <div className="absolute inset-0 z-0">
             <img 
               src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 

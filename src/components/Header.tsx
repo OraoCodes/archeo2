@@ -5,18 +5,36 @@ import { useBanner } from '../contexts/BannerContext';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
   const { isBannerVisible } = useBanner();
   
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      const currentScrollY = window.scrollY;
+      
+      // Show header when at top or scrolling up
+      if (currentScrollY < 10) {
+        setIsVisible(true);
+        setIsScrolled(false);
+      } else {
+        setIsScrolled(true);
+        // Hide when scrolling down, show when scrolling up
+        if (currentScrollY > lastScrollY && currentScrollY > 100) {
+          setIsVisible(false);
+        } else if (currentScrollY < lastScrollY) {
+          setIsVisible(true);
+        }
+      }
+      
+      setLastScrollY(currentScrollY);
     };
     
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   useEffect(() => {
     // Close mobile menu when route changes
@@ -29,7 +47,9 @@ const Header = () => {
         isBannerVisible ? 'top-[60px]' : 'top-0'
       } ${
         isScrolled ? 'py-3 bg-white/90 backdrop-blur shadow-sm' : 'py-5 bg-transparent'
-      }`}>
+      } ${
+        isVisible ? 'translate-y-0' : '-translate-y-full'
+      }`} style={{ minHeight: '120px' }}>
         <div className="container flex justify-between items-center">
           <Link to="/" className="flex items-center">
             <img 
