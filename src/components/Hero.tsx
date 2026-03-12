@@ -3,60 +3,67 @@ import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden min-h-[600px] md:min-h-[700px] flex items-center">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-          alt="Professional team collaboration" 
-          className="w-full h-full object-cover"
-        />
-        {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-archeohub-dark/80 via-archeohub-dark/70 to-archeohub-dark/60" />
-        {/* Subtle gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-archeohub-primary/10 to-transparent" />
-      </div>
+    <section className="relative pt-32 md:pt-40 pb-20 md:pb-32 overflow-hidden min-h-[520px] flex justify-center">
       
-      <div className="container max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-        <div className="flex flex-col items-center text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display tracking-tight mb-6 text-white max-w-4xl mx-auto text-balance animate-fade-in-up drop-shadow-lg">
-            Hire Fast. Hire Right.
-          </h1>
+      {/* Hero Card */}
+      <div className="relative w-full mx-4 sm:mx-6 md:mx-8 lg:mx-10 rounded-3xl shadow-2xl overflow-hidden min-h-[520px] md:min-h-[620px] flex items-center">
+        
+        {/* Left: Gradient + Right: Image */}
+        <div className="absolute inset-0 flex flex-col md:flex-row">
+          {/* Gradient behind content */}
+          <div className="w-full md:w-1/2 h-1/2 md:h-full bg-gradient-to-r from-blue-800 to-transparent" />
           
-          <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto text-balance animate-fade-in drop-shadow-md">
-            We connect ambitious talent with fast-growing startups and global companies — through recruitment, career development, and outsourced teams.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in">
-            <Link 
-              to="/outsourcing"
-              className="group button-primary text-base md:text-lg px-8 py-4 bg-white text-archeohub-primary hover:bg-archeohub-accent hover:text-white shadow-lg"
-            >
-              <span className="flex items-center">
-                For Companies
-                <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </span>
-            </Link>
-            <Link 
-              to="/for-startups"
-              className="group button-primary text-base md:text-lg px-8 py-4 bg-white text-archeohub-primary hover:bg-archeohub-accent hover:text-white shadow-lg"
-            >
-              <span className="flex items-center">
-                For Startups
-                <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </span>
-            </Link>
-            <Link 
-              to="/for-talent"
-              className="group inline-flex items-center border-2 border-white text-white font-medium text-base md:text-lg px-8 py-4 rounded-lg hover:bg-white hover:text-archeohub-primary transition-all duration-300 shadow-lg"
-            >
-              <span className="flex items-center">
-                For Talent
-                <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </span>
-            </Link>
+          {/* Image side */}
+          <div
+            className="w-full md:w-1/2 h-1/2 md:h-full bg-cover bg-center"
+            style={{
+              backgroundImage:
+                "url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')",
+            }}
+          />
+        </div>
+
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/25" />
+
+        {/* Content Card */}
+        <div className="relative z-10 w-full md:w-1/2 px-6 sm:px-8 md:px-12 lg:px-16 flex items-center">
+          <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 md:p-12 shadow-lg w-full">
+            
+            <h1 className="font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 drop-shadow-xl tracking-tight leading-tight text-white">
+              Hire Fast. Hire Right
+            </h1>
+
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-8 drop-shadow-md text-white/90">
+              We connect ambitious talent with fast-growing startups and global companies — through recruitment, career development, and outsourced teams.
+            </p>
+
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-start">
+              <Link
+                to="/outsourcing"
+                className="px-8 sm:px-10 py-3 sm:py-4 bg-blue-600 text-white font-semibold rounded-2xl shadow-lg hover:bg-blue-700 hover:scale-105 transition-transform flex items-center justify-center"
+              >
+                For Companies <ArrowRight size={22} className="ml-2" />
+              </Link>
+
+              <Link
+                to="/for-startups"
+                className="px-8 sm:px-10 py-3 sm:py-4 bg-black text-white font-semibold rounded-2xl shadow-lg hover:bg-gray-800 hover:scale-105 transition-transform flex items-center justify-center"
+              >
+                For Startups <ArrowRight size={22} className="ml-2" />
+              </Link>
+
+              <Link
+                to="/for-talent"
+                className="px-8 sm:px-10 py-3 sm:py-4 border-2 border-white text-white font-semibold rounded-2xl shadow-lg hover:bg-white hover:text-blue-600 hover:scale-105 transition-all flex items-center justify-center"
+              >
+                For Talent <ArrowRight size={22} className="ml-2" />
+              </Link>
+            </div>
+
           </div>
         </div>
+
       </div>
     </section>
   );

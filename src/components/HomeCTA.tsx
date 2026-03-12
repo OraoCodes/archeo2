@@ -3,34 +3,40 @@ import { ArrowRight } from 'lucide-react';
 
 const HomeCTA = () => {
   return (
-    <section className="py-20 md:py-28 bg-archeohub-primary text-white">
-      <div className="container px-4 sm:px-6">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold font-display mb-6">
+    <section className="py-24 bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 text-white">
+      <div className="px-6 lg:px-16 max-w-[1200px] mx-auto">
+
+        <div className="text-center max-w-3xl mx-auto">
+
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Build your team or build your career — the future of work begins here.
           </h2>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-10">
-            <Link 
+
+          <div className="flex flex-col sm:flex-row gap-5 justify-center mt-10">
+
+            {/* Primary Button */}
+            <Link
               to="/contact"
-              className="group inline-flex items-center bg-white text-archeohub-primary font-medium py-4 px-8 rounded-lg hover:bg-archeohub-accent hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+              className="inline-flex items-center justify-center bg-white text-blue-700 font-medium py-4 px-8 rounded-xl shadow-lg hover:bg-gray-100 transition"
             >
-              <span>Get Started</span>
-              <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
+              Get Started <ArrowRight size={20} className="ml-2" />
             </Link>
-            <Link 
+
+            {/* Secondary Button */}
+            <Link
               to="/for-talent"
-              className="group inline-flex items-center border-2 border-white text-white font-medium py-4 px-8 rounded-lg hover:bg-white hover:text-archeohub-primary transition-all duration-300"
+              className="inline-flex items-center justify-center border-2 border-white text-white font-medium py-4 px-8 rounded-xl hover:bg-white hover:text-blue-700 transition"
             >
-              <span>Join as Talent</span>
-              <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
+              Join as Talent <ArrowRight size={20} className="ml-2" />
             </Link>
+
           </div>
+
         </div>
+
       </div>
     </section>
   );
 };
 
 export default HomeCTA;
-

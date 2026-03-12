@@ -66,7 +66,7 @@ const Footer = () => {
             <div>
               <Link to="/">
                 <img 
-                  src="/lovable-uploads/830ca3f1-695b-4953-90b1-be9d995f341c.png" 
+                  src="/lovable-uploads/archeo_logo.png" 
                   alt="Archeohub Logo" 
                   className="h-[7.2rem] w-auto -my-4 -ml-3 mb-4" 
                 />
